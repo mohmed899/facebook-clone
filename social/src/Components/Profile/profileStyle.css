@@ -1,0 +1,21 @@
+.profileCover{
+    height: 300px ;
+    position: relative;
+}
+.coverImg{
+    width:  150px;
+    height: 150px;
+    
+    object-fit: cover;
+    border: 3px solid gainsboro;
+    position: absolute;
+    left:43%;
+    bottom: 10%;
+}
+.profileImg{
+    width: 10rem;
+    height: 10rem;
+    border: 3px solid gainsboro;
+   position: absolute;
+   top: 30%;
+}

@@ -1,0 +1,22 @@
+h3,h5{
+    color: beige;
+    margin-left: 2px;
+    animation: myAnim 1s linear 0s 1 normal none;
+}
+
+.FrindListHolder{
+  background: hsl(252deg 8% 12%);
+  text-align: center;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.RidisterFormBg{
+  background: #282a37; 
+  width: 80%;
+  height: 600px;
+  margin: auto;
+   background-image: url('./assests/rig.jpg');
+  /*background-clip: content-box; */
+}
+
+.t{
+  margin-top: 100px;
+   background: yellow;
+      font-size: xx-large;
+      color: chartreuse;
+}
+
+
+
+.mainNav{
+  position: sticky;
+  z-index: 55;
+  background: #0a0d1c;
+  /* padding: 12px; */
+  width: 100%;
+  top: 0px;
+  padding-bottom: 15px;
+  margin-top: 2px;
+  
+}
+
+.stiky{
+  position: sticky;
+  top: 0px;
+}
+
+
+.myDiv {
+padding: 0% !important;
+  z-index: 1;
+
+  height: 500px;
+  height: 100%;
+  background: url('./assests/rig.jpg') center center;
+  
+}
+
+.bg {
+  background-image: linear-gradient( to right , #282a37 28%, rgba(0, 0, 0, 22%) );
+ 
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.formbg{
+  background-color:#282a37;
+}
+
+.InputFild{
+  background: #323645 !important ;
+  color: rgb(236, 231, 225)  !important;
+  font-size: medium  !important;
+  border: 0px !important;
+  border-radius: 16px !important;
+}
+
+.InputLable{
+  color: aliceblue !important;
+  font-size: medium  !important;
+}
+
+.NameInputFildwidth{
+  width:48% !important ;
+}
+.HeaderForm{
+  color: aliceblue ;
+  margin-left: 24px;
+}
+.Welcometext{
+  font-size: xx-large !important;
+  color: aliceblue !important;
+  font-family: sans-serif;
+  margin-top: -11px;
+  margin-bottom: -12px;
+}
+.dot{
+  color: rgb(3, 118, 226);
+  font-size: xxx-large;
+  font-family: cursive;
+}
+
+.SubText{
+  color: hsl(217deg 13% 69%);
+    font-size: medium;
+    font-weight: 500;
+    font-family: revert;
+    margin-bottom: -12px;
+}
+.InValidMessage{
+color: red;
+margin-left: 4px;
+}
+
+.maxHeight{
+  height: 100vh;
+  
+}
+
+.bodyBg{
+  background: hsl(232deg 8% 35%);
+}
+
+.Contentt{
+  border: 0px;
+  background-color: #282a37;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 95vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+.test{
+  height: fit-content;
+  min-height: 100vh;
+  background:#0a0d1c
+}
+
+
+.componentBg{
+  background: #1d1c21;
+}

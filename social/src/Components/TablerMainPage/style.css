@@ -1,0 +1,28 @@
+.unActive{
+    text-decoration: none;
+    color: #4a4a4e;
+    margin-left: 12px;
+    margin-right: 12px;
+  
+}
+.unActive:hover{
+    color: #166ae7e8;
+    text-decoration: none;
+}
+
+.unActive:active{
+    text-decoration: none;
+}
+
+
+
+    
+
+.NavIconHolder {
+    background: hsl(252deg 8% 12%);
+  padding-top: 12px;
+  padding-bottom: 12px;
+    border-radius: 17px;
+    width: fit-content;
+    margin: auto;
+}
