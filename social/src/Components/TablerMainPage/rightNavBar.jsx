@@ -9,8 +9,12 @@ import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import './style.css'
 import { Avatar } from "@mui/material";
+
+import React, { useContext, useEffect, useState } from 'react';
 export default function RightNavBar() {
 const curentUser = JSON.parse( localStorage.getItem('user'))
+
+ 
     return (
         <div className="NavIconHolder d-flex align-items-center">
 

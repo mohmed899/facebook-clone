@@ -9,6 +9,7 @@ import NavMainPage from "./TablerMainPage/TablerMain"
 
 function MainPage(params) {
 
+
     return (
         <>
             <div className="row m-0 p-2 ">

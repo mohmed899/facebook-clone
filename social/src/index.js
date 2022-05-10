@@ -11,11 +11,11 @@ import {UserContxetProvider} from './Components/Context/UserContextProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-  <React.StrictMode>
+  
     <UserContxetProvider>
     <App />
     </UserContxetProvider>
-  </React.StrictMode>
+ 
   </BrowserRouter>
 );
 

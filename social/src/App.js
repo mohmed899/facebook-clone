@@ -14,7 +14,16 @@ import Messenger from './Components/messenger/messagePage';
 import WatchHolder from './Components/Watch/watch';
 import Profile from './Components/Profile/Profile';
 import HomeFeed from './Components/PostsPage/HomeFeed';
+import { useEffect } from 'react';
+import { io } from "socket.io-client";
 function App() {
+
+  useEffect(()=>{
+    let socket = io('http://localhost:4000/')
+    socket.on("connect", () => {
+      console.log(socket.connected); // true
+    });
+},[])
   return (
     <>
     <div className='test'  >
