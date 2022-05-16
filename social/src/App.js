@@ -14,14 +14,20 @@ import Messenger from './Components/messenger/messagePage';
 import WatchHolder from './Components/Watch/watch';
 import Profile from './Components/Profile/Profile';
 import HomeFeed from './Components/PostsPage/HomeFeed';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { io } from "socket.io-client";
+import{UserContext} from './Components/Context/UserContextProvider'
 function App() {
 
+  let socket = useContext(UserContext);
   useEffect(()=>{
-    let socket = io('http://localhost:4000/')
+   // let socket = io('http://localhost:4000/')
+    const CurentUser = JSON.parse(localStorage.getItem("user"));
     socket.on("connect", () => {
-      console.log(socket.connected); // true
+    socket.emit("addUser",CurentUser._id)
+    //save socket 
+    //localStorage.setItem("socket", JSON.stringify(socket))
+
     });
 },[])
   return (

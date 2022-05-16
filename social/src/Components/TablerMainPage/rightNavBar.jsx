@@ -9,18 +9,24 @@ import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import './style.css'
 import { Avatar } from "@mui/material";
-
+import { UserContext } from "../Context/UserContextProvider";
 import React, { useContext, useEffect, useState } from 'react';
 export default function RightNavBar() {
 const curentUser = JSON.parse( localStorage.getItem('user'))
 
- 
+let socket = useContext(UserContext);
+ let [notification,setNotification] = useState(0);
+ socket.on("getNoto",(body)=>{
+     setNotification(++notification);
+
+     console.log(body);
+ })
     return (
         <div className="NavIconHolder d-flex align-items-center">
 
 
             <NavLink to='./post' style={({ isActive }) => isActive ? { color: '#166ae7e8' } : undefined} className='unActive ' >
-                <Badge badgeContent={4} color='primary' >
+                <Badge badgeContent={notification} color='primary' >
                     <NotificationsIcon sx={{ color: 'white' }} />
                 </Badge>
             </NavLink>

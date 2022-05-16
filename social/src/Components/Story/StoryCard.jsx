@@ -6,12 +6,12 @@ export default function StoryCard({storyd}) {
         ownerName:"mohamed khaled"
     }
     return (
-        <div class="story">
+        <div className="story">
             <img src={story.userImg}alt="Anuska's story" />
-            <div class="dp-container">
+            <div className="dp-container">
                 <img src={story.storyImg} alt="" />
             </div>
-            <p class="name">{story.ownerName}</p>
+            <p className="name">{story.ownerName}</p>
         </div>
     )
 }

@@ -3,9 +3,10 @@ import "./post.css";
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import UserApi from '../../API/UserApi'
 import PostApi from "../../API/postApi";
+import { UserContext } from "../Context/UserContextProvider";
 export default function Post({ post }) {
 
   let [postOwner, setPostOwner] = useState({})
@@ -19,6 +20,7 @@ export default function Post({ post }) {
   }, [])
 
 
+  let socket = useContext(UserContext);
   function likeHandler(params) {
      if(!isLiked){
        setPostLike(++PostLikes);
@@ -29,6 +31,9 @@ export default function Post({ post }) {
       setIsLiked(false);
      }
      PostApi.UpdatePostLiks(post._id,{likes:PostLikes})
+  
+    socket.emit("postLiked",{postId:post._id,postOwnerId:postOwner._id});
+
   }
   return (
     <div className="post">

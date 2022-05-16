@@ -25,7 +25,7 @@ function MainPage(params) {
                 <div className="col-9">
 
                     <div className="d-flex flex-wrap mainNav">
-                        <div className="col-4"><SearchBar /></div>
+                        <div className="col-4 position-relative "><SearchBar /></div>
                         <div className="col-4"><NavMainPage /></div>
                         <div className="col-4"><RightNavBar/></div>
                     </div>

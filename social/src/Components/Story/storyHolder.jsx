@@ -1,23 +1,28 @@
+import React from 'react'
 import './story.css'
 import StoryCard from './StoryCard'
 export default function StoryHolder(params) {
     let stories = [1,2,3,4]
     return (
-        <div class="middle-panel">
-        <div class="story-section">
+        <div className="middle-panel">
+        <div className="story-section">
 
-            <div class="story create">
-                <div class="dp-image">
+            <div className="story create">
+                <div className="dp-image">
                     <img src="https://aashishpanthi.me/mediabook/images/dp.jpg" alt="Profile pic"/>
                 </div>
-                <span class="dp-container">
-                    <i class="fa fa-plus"></i>
+                <span className="dp-container">
+                    <i className="fa fa-plus"></i>
                 </span>
-                <span class="name">Create Story</span>
+                <span className="name">Create Story</span>
             </div>
                {
                    stories.map((i)=>{
-                    return( <StoryCard></StoryCard>)
+                    return( 
+                        <React.Fragment key={i}>
+                            <StoryCard></StoryCard>
+                        </React.Fragment>
+                    )
                    })
                }
 
