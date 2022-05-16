@@ -9,7 +9,7 @@ export default function PeopleHolder(params) {
             const CurentUser = JSON.parse(localStorage.getItem("user"));
             const users = await UserApi.getUsersByOPtions({ isFriend: false,  UserId:CurentUser._id });
             setUsers(users)
-            console.log(users)
+          //  console.log(users)
         })()
     }, [])
 

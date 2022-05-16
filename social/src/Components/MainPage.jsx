@@ -13,7 +13,7 @@ function MainPage(params) {
     return (
         <>
             <div className="row m-0 p-2 ">
-                <div className="col-3  " >
+                <div className="col-3 d-sm-none  d-lg-block " >
                  
 
                     <FriendsList />
@@ -22,7 +22,7 @@ function MainPage(params) {
 
                 </div>
 
-                <div className="col-9">
+                <div className="col-lg-9 col-md-12">
 
                     <div className="d-flex flex-wrap mainNav">
                         <div className="col-4 position-relative "><SearchBar /></div>

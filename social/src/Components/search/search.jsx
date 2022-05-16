@@ -1,22 +1,28 @@
 import './style.css'
-import { Avatar } from '@mui/material'
 import React, { useState } from 'react'
 import SearchItem from './SearchItem'
-
+import UserApi from '../../API/UserApi'
 export default function SearchBar() {
+    let TextInputRef ;
+    let [SearchResult,setSearchResult] = useState([]) 
 
-    let [SearchResult,setSearchResult] = useState([1,2,3]) 
-
+    function OnSeachInputChange(){
+        UserApi.SearchUsers(TextInputRef.value).then(
+            (users)=>{
+                setSearchResult(users) 
+            }
+        )
+    }
     return (
 
         <div className='w-100'>
 
             <div className="search-bar">
-                <input className='inputs' type="text" placeholder="Search" />
+                <input ref={el=>(TextInputRef =el)} className='inputs' type="text" placeholder="Search" onChange={OnSeachInputChange} />
             </div>
 
 
-            <div className="position-absolute roubded-2" style={{width:'89%' , background:'hsl(252deg 8% 12%)'}}>
+            <div className="position-absolute rounded-2" style={{width:'89%' , background:'hsl(252deg 8% 12%)' ,overflowY:"auto" , maxHeight:300}}>
 
               {
                   SearchResult.map((user, i)=>{

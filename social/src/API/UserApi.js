@@ -42,6 +42,11 @@ const Api = {
 
     
 
+    SearchUsers: async (searchText) => {
+        const res = await axios.get(baseURL+'search' ,{ params: {searchText} })
+        return (res.data)
+    },
+
 
 
 
