@@ -8,46 +8,65 @@ import NavMainPage from "../../TablerMainPage/TablerMain";
 import RightNavBar from "../../TablerMainPage/rightNavBar";
 import ConversationApi from "../../../API/ConversationApi";
 
-
+import UserApi from "../../../API/UserApi";
 export default function ChatBody(params) {
-  
+
   //get the last convesation of curent user 
   const CurentUser = JSON.parse(localStorage.getItem("user"));
-  let temp=[];
-  let [ ConversationInfo , SetConversationInfo ] = useState({allChatUsers:[],ConvId:"",OtherUserId:""})
+  let temp = [];
+  let [ConversationInfo, SetConversationInfo] = useState({ allChatUsers: [], ConvObj: {}, OtherUserId: "" })
   useEffect(() => {
     ConversationApi.GetUserConversaion(CurentUser._id).then(
-      (Concersations)=>{
-       // setallChatUsers(Concersations);
-        let ConvId = Concersations[0]._id;
-        let OtherUserId = Concersations[0].OtherID
-      
-       
-        SetConversationInfo({allChatUsers:Concersations,ConvId,OtherUserId })
+      (Concersations) => {
+
+        if (Concersations.length != 0) {
+          let ConvId = Concersations[0]._id;
+          let OtherUserId = Concersations[0].Members[0] == CurentUser._id ? Concersations[0].Members[1] : Concersations[0].Members[0];
+          UserApi.getUserById(OtherUserId).then(
+            (u) => {
+
+              SetConversationInfo({ allChatUsers: Concersations,
+                 ConvObj: { ConvId, ConvName: u.fName + '' + u.lName, ConvImg: u.img , RceverID: OtherUserId}, OtherUserId })
+            }
+          )
+        }
       }
     )
-}, [])
+  }, [])
 
 
-   function setConversation(ConvId, OtherUserId ) {
-    console.log("allChatUsers",temp)
-    
-    SetConversationInfo({allChatUsers:ConversationInfo.allChatUsers,ConvId,OtherUserId })
-   }
+  function setConversation(SelectedConvObj, OtherUserId) {
+
+    let { ConvId, ConvName, ConvImg } = SelectedConvObj;
+
+    SetConversationInfo(
+      {
+        allChatUsers: ConversationInfo.allChatUsers,
+        ConvObj: { ConvId, ConvName, ConvImg },
+        OtherUserId
+      })
+  }
   return (
     <div>
 
-      {/* <div className="d-flex flex-wrap mainNav">
+       <div className="d-flex flex-wrap mainNav">
         <div className="col-4 position-relative "><SearchBar /></div>
         <div className="col-4"><NavMainPage /></div>
         <div className="col-4"><RightNavBar /></div>
-      </div> */}
+      </div> 
 
-      <div className="main__chatbody">
-   
-        <ChatList allChatUsers ={ConversationInfo.allChatUsers }  SetConvId ={setConversation}/>
-        <ChatContent ConvId={ConversationInfo.ConvId} />
-        <UserProfile OtherUserId={ConversationInfo.OtherUserId} />
+      <div className="main__chatbody ">
+
+          <div className="d-none d-lg-block ">
+            <ChatList allChatUsers={ConversationInfo.allChatUsers} SetConvId={setConversation} />
+          </div>
+          <div className="">
+
+          </div>
+            <ChatContent  ConvObjj={ConversationInfo.ConvObj} />
+          <div className="d-none d-lg-block ">
+            <UserProfile OtherUserId={ConversationInfo.OtherUserId} />
+          </div >
       </div>
     </div>
 

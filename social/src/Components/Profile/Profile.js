@@ -25,7 +25,8 @@ function Profile() {
         ConvName:user.fName+''+user.lName,
         OwnerID:CurentUser._id,
         OtherID:user._id,
-        img:user.img
+        img:user.img,
+        Members:[CurentUser._id,user._id]
       }
       ConvApi.AddConversation(Conv);
   }

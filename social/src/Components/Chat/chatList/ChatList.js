@@ -5,8 +5,8 @@ import ChatListItems from "./ChatListItems";
 
 export default function ChatList({allChatUsers,SetConvId}) {
  
-console.log(SetConvId)
-
+  const CurentUser = JSON.parse(localStorage.getItem("user"));
+  console.log(allChatUsers);
   return (
     <div className="main__chatlist">
 
@@ -32,15 +32,13 @@ console.log(SetConvId)
     
             <ChatListItems
               SetConvFun={SetConvId}
-              OtherID={item.OtherID}
+              OtherID={item.Members[0]==CurentUser._id?item.Members[1]:item.Members[0]}
               ConvId={item._id}
-
-              name={item.ConvName}
               key={index}
               animationDelay={index + 1}
               active={"active"}
               isOnline={"active" }
-              image={item.img}
+            
             />
           );
         })}

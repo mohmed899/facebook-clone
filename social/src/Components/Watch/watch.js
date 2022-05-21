@@ -1,5 +1,7 @@
 import VideoItem from "./VideoItem"
 import React from "react";
+import { Player } from "react-tuby";
+import "react-tuby/css/main.css";
 export default function WatchHolder(params) {
 
     let vedios = [
@@ -22,9 +24,7 @@ export default function WatchHolder(params) {
             } */}
 
             <h4> some title</h4>
-            <video width="750" height="500" controls>
-                <source src={'https://www.youtube.com/watch?v=PZ7lDrwYdZc&feature=youtu.be'} type="video/mp4" />
-            </video>
+            <Player src="blob:https://www.pinterest.com/33c41754-598c-40a9-9b12-5d7004162b6f" />
         </div>
     )
 }

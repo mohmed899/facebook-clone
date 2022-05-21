@@ -38,10 +38,11 @@ function App() {
     <div className='test'  >
     <Routes >
         <Route path='/' element={< Messenger/>}  ></Route> 
-        <Route path='/c' element={< ChatBody/>}  ></Route> 
+        <Route path='/chat' element={< ChatBody/>}  ></Route> 
         <Route path='/Login' element={<LoginForm />}  ></Route>
         <Route path='/profile/:id' element={<Profile />}  ></Route>
         <Route path='/Home' element={<MainPage/>}>
+         <Route index element={<HomeFeed />} />
           <Route  path='post' element={<HomeFeed />} />
           <Route path='store' element={<Store />} />
           <Route path='people' element={<PeopleHolder />} />

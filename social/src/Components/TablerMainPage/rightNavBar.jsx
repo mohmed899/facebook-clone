@@ -30,7 +30,7 @@ let socket = useContext(UserContext);
                     <NotificationsIcon sx={{ color: 'white' }} />
                 </Badge>
             </NavLink>
-            <NavLink to='./post' style={({ isActive }) => isActive ? { color: '#166ae7e8' } : undefined} className='unActive ' >
+            <NavLink to='/chat' style={({ isActive }) => isActive ? { color: '#166ae7e8' } : undefined} className='unActive ' >
                 <Badge badgeContent={0} color='primary' >
                     <ChatIcon sx={{ color: 'white' }} />
                 </Badge>
