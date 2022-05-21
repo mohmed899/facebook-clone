@@ -17,6 +17,8 @@ import HomeFeed from './Components/PostsPage/HomeFeed';
 import { useContext, useEffect } from 'react';
 import { io } from "socket.io-client";
 import{UserContext} from './Components/Context/UserContextProvider'
+import ChatBody from './Components/Chat/chatBody/ChatBody';
+
 function App() {
 
   let socket = useContext(UserContext);
@@ -25,6 +27,7 @@ function App() {
     const CurentUser = JSON.parse(localStorage.getItem("user"));
     socket.on("connect", () => {
     socket.emit("addUser",CurentUser._id)
+    console.log(socket.id)
     //save socket 
     //localStorage.setItem("socket", JSON.stringify(socket))
 
@@ -34,7 +37,8 @@ function App() {
     <>
     <div className='test'  >
     <Routes >
-        <Route path='/' element={< RigisterPage/>}  ></Route> 
+        <Route path='/' element={< Messenger/>}  ></Route> 
+        <Route path='/c' element={< ChatBody/>}  ></Route> 
         <Route path='/Login' element={<LoginForm />}  ></Route>
         <Route path='/profile/:id' element={<Profile />}  ></Route>
         <Route path='/Home' element={<MainPage/>}>

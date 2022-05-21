@@ -7,6 +7,7 @@ import CreatePost from "../PostsPage/CreatePost";
 import PostsHolder from '../PostsPage/postsHolder';
 import PostApi from '../../API/postApi'
 import UserApi from "../../API/UserApi";
+import ConvApi from "../../API/ConversationApi";
 import { Link, useParams } from 'react-router-dom';
 import NoPosts from '../Error/NoPostYet';
 import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
@@ -19,7 +20,15 @@ function Profile() {
     const CurentUser = JSON.parse(localStorage.getItem("user"));
     console.log(id);
     console.log(CurentUser);
-
+  function CreateConversation(params) {
+      let Conv = {
+        ConvName:user.fName+''+user.lName,
+        OwnerID:CurentUser._id,
+        OtherID:user._id,
+        img:user.img
+      }
+      ConvApi.AddConversation(Conv);
+  }
     useEffect(() => {
         console.log("post effect ")
         PostApi.getUserPosts(id).then(
@@ -53,12 +62,17 @@ function Profile() {
                     <div className='profileCover rounded-2 overflow-hidden' style={{ background: `url(${user.coverImg})` }}>
                         <img src={user.img} className='coverImg rounded-circle' />
                         <Link to={`/Home/post`}>
-                        <HomeTwoToneIcon/>
+                            <HomeTwoToneIcon />
                         </Link>
                     </div>
                     <div className='componentBg text-center p-1 rounded-2'>
                         <h3>{user.fName + ' ' + user.lName}</h3>
                         <h5>{user.job}</h5>
+                        <button onClick={CreateConversation} style={{ width: "fit-content" }} type="button" class="btn btn-info">
+                            <Link to={`/c`}>
+                            Message
+                          </Link></button>
+
                     </div>
 
                 </div>

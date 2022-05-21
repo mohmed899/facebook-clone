@@ -20,9 +20,10 @@ const Api = {
     }
    },
     getUserById: async (id) => {
-        //console.log("ddd")
-        const res = await axios.get(baseURL + id);
-        return res.data
+          if(id){
+              const res = await axios.get(baseURL + id);
+               return res.data
+          }
     },
     getUsersByOPtions: async (options) => {
 
