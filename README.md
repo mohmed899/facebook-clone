@@ -1,5 +1,9 @@
 # facebook-clone
- ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/67695832/170147030-db61eb19-145e-4fa4-86d8-9423c7d1e15e.gif)
+
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/67695832/170147349-488d5cd7-a0de-47cf-ac8f-a8f07022e39e.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/67695832/170147414-7bea743e-66ec-4d25-a056-dadadeaefa8d.gif)
+
 
 # Getting Started with Create React App
 
