@@ -1,5 +1,6 @@
 # facebook-clone
- 
+ ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/67695832/170147030-db61eb19-145e-4fa4-86d8-9423c7d1e15e.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -7,6 +8,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+
+first you have to run the backend server you can find the code here 
+https://github.com/mohmed899/Facebook-clone-Backend
 
 ### `npm start`
 
