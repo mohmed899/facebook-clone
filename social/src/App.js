@@ -37,9 +37,10 @@ function App() {
     <>
     <div className='test'  >
     <Routes >
-        <Route path='/' element={< Messenger/>}  ></Route> 
+        
         <Route path='/chat' element={< ChatBody/>}  ></Route> 
         <Route path='/Login' element={<LoginForm />}  ></Route>
+        <Route path='/Register' element={<RigisterPage />}  ></Route>
         <Route path='/profile/:id' element={<Profile />}  ></Route>
         <Route path='/Home' element={<MainPage/>}>
          <Route index element={<HomeFeed />} />

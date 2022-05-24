@@ -66,7 +66,7 @@ export default function CreatePost(params) {
             </div>
 
             <div>
-                <Dialog open={openedDialog} onClose={handleClose} style={{ height: "fit-content" }}>
+                <Dialog open={openedDialog} onClose={handleClose} style={{ height: "fit-content" , margin:"auto" }}>
                     <DialogTitle>Creat Post</DialogTitle>
                     <DialogContent>
 

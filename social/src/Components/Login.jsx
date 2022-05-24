@@ -20,7 +20,7 @@ const LoginForm = () => {
            console.log("log iv ")
             const CurentUser =  await  UserApi.login(inputsData)
            //sent user to context 
-           dispatch({user:CurentUser.data})
+           //dispatch({user:CurentUser.data})
            // to local storge
            localStorage.setItem("user", JSON.stringify(CurentUser.data))
            navigate('/Home')
@@ -63,7 +63,7 @@ const LoginForm = () => {
                         <div className='mt-4'>
                             <p className="SubText "  >start for free, and end broke </p>
                             <p className="Welcometext ">Welcome back...<span className="dot">.</span> </p>
-                            <p className="SubText m-0">are you new ?<span><NavLink to="/login"> loginn</NavLink></span> </p>
+                            <p className="SubText m-0">are you new ?<span><NavLink to="/Register"> Register</NavLink></span> </p>
                         </div>
                         <form className='needs-validation mt-5' noValidate={true}   >
                            
@@ -79,7 +79,7 @@ const LoginForm = () => {
                                 
                             </div>
                             <div className='d-flex flex-wrap justify-content-between'>
-                                <button type="button" className="m-auto rounded-pill btn btn-primary btn-lg NameInputFildwidth" onClick={fun}>Rigister</button>
+                                <button type="button" className="m-auto rounded-pill btn btn-primary btn-lg NameInputFildwidth" onClick={fun}>LogIn</button>
                             </div>
 
                         </form>

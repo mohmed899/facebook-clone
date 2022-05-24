@@ -13,7 +13,7 @@ export default function HomeFeed(params) {
     const { user } = useContext(UserContext)
     //componentDidMount 
     useEffect(() => {
-        console.log("post effect ")
+      
         PostApi.GetAllPosts().then(
             (posts) => {
                 console.log(posts)

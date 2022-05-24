@@ -42,8 +42,8 @@ const RigsterForm = () => {
             
         })
         
-         let{isValidfName,isValidlName,isValidEmail}=inputsDataValidation;
-         return isValidEmail&&isValidfName&&isValidlName;
+         let{isValidfName,isValidlName,isValidEmail,isValidPassword}=inputsDataValidation;
+         return isValidEmail&&isValidfName&&isValidlName&&isValidPassword;
         
     }
 
@@ -59,8 +59,8 @@ const RigsterForm = () => {
                     <div style={{marginTop:'7%'}} className='col-8 offset-1'>
                         <div className='mt-4'>
                             <p className="SubText "  >start for free, and end broke </p>
-                            <p className="Welcometext ">Welcome back...<span className="dot">.</span> </p>
-                            <p className="SubText m-0">are you new ?<span><NavLink to="/login"> loginn</NavLink></span> </p>
+                            <p className="Welcometext ">Welcome to the Internet...<span className="dot">.</span> </p>
+                            <p className="SubText m-0">are you new ?<span><NavLink to="/login"> login</NavLink></span> </p>
                         </div>
                         <form className='needs-validation mt-5' noValidate={true}   >
                         <div className='d-flex flex-wrap justify-content-between'>
@@ -68,7 +68,7 @@ const RigsterForm = () => {
                                  <div className="form-floating  d-d-inline mb-3  NameInputFildwidth " >
                                      <input name='fName' type="text" onChange={getData} className="InputFild form-control " id="floatingInput" placeholder=" " required noValidate={true} />
                                      <label htmlFor="floatingInput" className='InputLable'>First Name</label>
-                                     {inputsDataValidation.isValidfName?null:<div className='InValidMessage'> invaled last name</div> }
+                                     {inputsDataValidation.isValidfName?null:<div className='InValidMessage'> invaled first name</div> }
                                  </div>
                                  <div className="form-floating  d-d-inline mb-3 NameInputFildwidth" >
                                      <input name='lName' type="text" onChange={getData} className="InputFild form-control" id="floatingInput" placeholder=" " required  />
@@ -89,7 +89,7 @@ const RigsterForm = () => {
                                 
                              </div>
                              <div className='d-flex flex-wrap justify-content-between'>                                  <button type="button" className=" rounded-pill btn btn-secondary btn-lg NameInputFildwidth">Another way </button>
-                                 <button type="button" className="rounded-pill btn btn-primary btn-lg NameInputFildwidth" onClick={fun}>Rigister</button>
+                                 <button type="button" className="rounded-pill btn btn-primary btn-lg NameInputFildwidth" onClick={fun}>Register</button>
                              </div>
 
                         </form>

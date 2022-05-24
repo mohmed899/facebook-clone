@@ -42,18 +42,18 @@ export default function ChatBody(params) {
     SetConversationInfo(
       {
         allChatUsers: ConversationInfo.allChatUsers,
-        ConvObj: { ConvId, ConvName, ConvImg },
+        ConvObj: { ConvId, ConvName, ConvImg ,RceverID: OtherUserId },
         OtherUserId
       })
   }
   return (
     <div>
 
-       <div className="d-flex flex-wrap mainNav">
+       {/* <div className="d-flex flex-wrap mainNav">
         <div className="col-4 position-relative "><SearchBar /></div>
         <div className="col-4"><NavMainPage /></div>
         <div className="col-4"><RightNavBar /></div>
-      </div> 
+      </div>  */}
 
       <div className="main__chatbody ">
 

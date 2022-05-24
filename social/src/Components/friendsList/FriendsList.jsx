@@ -10,8 +10,25 @@ import { UserContext } from '../Context/UserContextProvider';
 export default function FriendsList() {
   let [users, setUsers] = useState([]);
   let [TempFriends, setTempFriends] = useState([]);
-let [isFriendsBtnExpanded,setIsFriendsBtnExpanded]=useState(false);
-console.log("frind l render");
+  let [isFriendsBtnExpanded, setIsFriendsBtnExpanded] = useState(false);
+  let socket = useContext(UserContext);
+  let ch = false;
+//  socket.on("SC", (userId) =>{
+  
+
+//    for (let  u in users){
+//      if(u._id===userId){
+//        u.isOnline=true;
+//        ch= true;
+//      }
+//     }
+//     if(ch){
+//       console.log("some one connectes ",users);
+//       setUsers([...users])
+
+//     }
+   
+//  }) 
   useEffect(() => {
     (async () => {
       const CurentUser = JSON.parse(localStorage.getItem("user"));
@@ -20,22 +37,24 @@ console.log("frind l render");
         UserId: CurentUser._id
       }
       users = await UserAPI.getUsersByOPtions(option)
-      setTempFriends(users)
-      setUsers(users.slice(0,2));
-      console.log("on test",users)
+      TempFriends = [...users];
+      setUsers(users.slice(0, 3));
+
     })();
   }, [])
 
   function ClikeHandler() {
-    if(isFriendsBtnExpanded){
-     
-      setIsFriendsBtnExpanded(false);
-    }
-    else{
-    
-      setUsers(TempFriends);
-    }
-    
+    // if (isFriendsBtnExpanded) {
+    //   setUsers(users.slice(0, 2));
+    //   setIsFriendsBtnExpanded(false);
+    // }
+    // else {
+
+    //   setUsers([...TempFriends])
+    //   setIsFriendsBtnExpanded(true);
+
+    // }
+
   }
 
   return (
@@ -58,7 +77,7 @@ console.log("frind l render");
       }
 
 
-      <button type="button" className="btn btn-primary mt-3 w-100" onClick={ClikeHandler}>{isFriendsBtnExpanded?'Show less':'Show more'} </button>
+      <button type="button" className="btn btn-primary mt-3 w-100" onClick={ClikeHandler}>{isFriendsBtnExpanded ? 'Show less' : 'Show more'} </button>
     </div>
 
 

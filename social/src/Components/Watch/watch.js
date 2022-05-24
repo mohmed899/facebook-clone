@@ -6,12 +6,13 @@ export default function WatchHolder(params) {
 
     let vedios = [
         '../assets/v1.mp4',
+        '../assets/v6.mp4',
+        '../assets/v7.mp4',
       '../assets/v2.mp4',
       '../assets/v3.mp4',
       '../assets/v4.mp4',
       '../assets/v5.mp4',
-      '../assets/v6.mp4',
-      '../assets/v7.mp4',
+  
 
     ]
     return (

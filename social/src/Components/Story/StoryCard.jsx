@@ -1,15 +1,15 @@
 import './story.css'
-export default function StoryCard({storyd}) {
+export default function StoryCard({userImg,storyImg,ownerName}) {
   let  story={
-        userImg:'https://aashishpanthi.me/mediabook/images/model.jpg',
-        storyImg:'https://aashishpanthi.me/mediabook/images/model.jpg',
-        ownerName:"mohamed khaled"
+        userImg,
+        storyImg,
+        ownerName
     }
     return (
         <div className="story">
-            <img src={story.userImg}alt="Anuska's story" />
+            <img src={story.storyImg}alt="Anuska's story" />
             <div className="dp-container">
-                <img src={story.storyImg} alt="" />
+                <img src={story.userImg} alt="" />
             </div>
             <p className="name">{story.ownerName}</p>
         </div>

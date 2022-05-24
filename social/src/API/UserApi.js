@@ -7,7 +7,7 @@ const Api = {
             const res = await axios.post(baseURL, user);
             return res;
         } catch (error) {
-            alert(error.message);
+         //   alert(error.message);
         }
 
     },
@@ -16,7 +16,7 @@ const Api = {
         const res = await axios.get(baseURL+'/LogIn', {params:LoginData});
         return res;
     } catch (error) {
-        alert(error.message);
+       // alert(error.message);
     }
    },
     getUserById: async (id) => {
