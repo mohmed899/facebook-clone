@@ -25,7 +25,7 @@ function FriendItem({user}) {
                     
 
                 }} />
-                <FiberManualRecordIcon sx={{ fontSize: 17 ,color: user.status=='active'? "green" :'gray' }}   />
+                <FiberManualRecordIcon sx={{ fontSize: 17 ,color: user.isOnline? "#21d630" :'gray' }}   />
         </ListItem>
 
     )

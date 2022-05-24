@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom"
 import FriendsList from "./friendsList/FriendsList"
+import Music from "./Music/music"
 import CreatePost from "./PostsPage/CreatePost"
 import RecentViewList from "./RecentView/RecentViewList"
 import SearchBar from "./search/search"
@@ -36,7 +37,8 @@ function MainPage(params) {
                             </div>
                         </div>
                         <div className="col-4 "style={{paddingLeft:12}}>
-                            <RecentViewList />
+                            {/* <RecentViewList /> */}
+                            <Music></Music>
                         </div>
                     </div>
 

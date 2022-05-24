@@ -70,7 +70,7 @@ function Profile() {
                         <h3>{user.fName + ' ' + user.lName}</h3>
                         <h5>{user.job}</h5>
                         <button onClick={CreateConversation} style={{ width: "fit-content" }} type="button" class="btn btn-info">
-                            <Link to={`/c`}>
+                            <Link to={`/chat`}>
                             Message
                           </Link></button>
 

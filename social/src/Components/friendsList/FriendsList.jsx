@@ -22,6 +22,7 @@ console.log("frind l render");
       users = await UserAPI.getUsersByOPtions(option)
       setTempFriends(users)
       setUsers(users.slice(0,2));
+      console.log("on test",users)
     })();
   }, [])
 

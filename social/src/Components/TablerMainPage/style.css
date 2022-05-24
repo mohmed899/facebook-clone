@@ -14,9 +14,22 @@
     text-decoration: none;
 }
 
+.notoList{
+    background: aliceblue;
+    position: absolute;
+    top: 57px;
+    left: 18px;
+    width: 222px;
+    border-radius: 12px;
+}
 
-
-    
+    .notoText{
+        font-size: medium;
+        font-weight: 500;
+        font-family: system-ui;
+        max-width: 150px;
+        
+    }
 
 .NavIconHolder {
     background: hsl(252deg 8% 12%);

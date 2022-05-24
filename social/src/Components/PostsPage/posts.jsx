@@ -8,7 +8,7 @@ import UserApi from '../../API/UserApi'
 import PostApi from "../../API/postApi";
 import { UserContext } from "../Context/UserContextProvider";
 export default function Post({ post }) {
-
+  const CurentUser = JSON.parse(localStorage.getItem("user"));
   let [postOwner, setPostOwner] = useState({})
   let [PostLikes, setPostLike] = useState(post.likes)
   let [isLiked, setIsLiked] = useState(false)
@@ -32,7 +32,7 @@ export default function Post({ post }) {
      }
      PostApi.UpdatePostLiks(post._id,{likes:PostLikes})
   
-    socket.emit("postLiked",{postId:post._id,postOwnerId:postOwner._id});
+    socket.emit("postLiked",{postId:post._id,postOwnerId:postOwner._id,img:CurentUser.img ,Name:CurentUser.fName});
 
   }
   return (
